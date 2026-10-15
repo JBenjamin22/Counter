@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3edf7;
+        }
+        header {
+            background-color: #d9c7ff;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        header h1 {
+            margin-left: 20px;
+            font-size: 28px;
+            font-weight: normal;
+        }
+        #container {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #container p {
+            margin: 5px 0;
+        }
+        #label {
+            font-size: 14px;
+            color: #333;
+        }
+        #szam {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        #row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        #row2{
+            display: flex;
+            gap: 90px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 15px;
+            background-color: #e7d9ff;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Counter</h1>
+</header>
+<div id="container">
+    <p id="label">Counter value:</p>
+    <p id="szam">0</p>
+    <div id="row">
+        <button onclick="Kivonas()">−</button>
+        <button onclick="Hozzaadas()">+</button>
+    </div>
+    <div id="row2">
+        <button onclick="Kivonas10()">-10</button>
+        <button onclick="Hozzaadas10()">+10</button>
+    </div>
+</div>
+<script>
+    function Hozzaadas() {
+        const szam = document.getElementById("szam");
+        szam.textContent = parseInt(szam.textContent) + 1;
+    }
+    function Kivonas() {
+        const szam = document.getElementById("szam");
+        szam.textContent = parseInt(szam.textContent) - 1;
+    }
+    function Hozzaadas10() {
+        const szam = document.getElementById("szam");
+        szam.textContent = parseInt(szam.textContent) + 10;
+    }
+    function Kivonas10() {
+        const szam = document.getElementById("szam");
+        szam.textContent = parseInt(szam.textContent) - 10;
+    }
+</script>
+</body>
+</html>
